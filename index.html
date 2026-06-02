@@ -460,6 +460,20 @@
             const scrollY = window.scrollY;
             const mobile  = isMobile();
 
+            const bottomMask = document.querySelector('.bottom-mask');
+
+if (bottomMask) {
+    // 0 → 700px scroll = 14% → 57%
+    const progress = Math.min(scrollY / 700, 1);
+
+    const startHeight = 4;
+    const endHeight = 57;
+
+    const currentHeight =
+        startHeight + (endHeight - startHeight) * progress;
+
+    bottomMask.style.height = `${currentHeight}%`;
+}
             // SCROLL PARALLAX
             // Mobile: speeds drastically reduced, layer-7 locked (speed=0) to prevent gap
             // Desktop: full speeds as configured

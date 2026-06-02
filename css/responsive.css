@@ -66,6 +66,9 @@
     .heroo::before {
         height: 91%;
     }
+    .bottom-mask {
+        z-index: 9;
+    }
 }
 
 @media (max-width: 1024px) {
