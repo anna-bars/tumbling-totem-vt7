@@ -19,7 +19,7 @@
         top: -112px;
     }
     .heroo::before {
-        height: 24%;
+        height: 6%;
     }
     .front-bottom-layer-01 {
         bottom: 0%;
@@ -49,19 +49,6 @@
 }
 
 @media (max-width: 1220px) {
-    .layer-5-jungle-mid {
-        /* bottom: -12%; */
-        /* border-bottom: 38px solid #122E39; */
-    }
-    .layer-6-jungle-front {
-        /* bottom: -18%; */
-    } 
-    .layer-7-foreground {
-        width: 100%;
-        position: absolute;
-        /* bottom: -36%; */
-        z-index: 7;
-    }
     .about-section-top-divider.scrolled {
         top: -97px;
     }
@@ -76,6 +63,9 @@
         height: 70%;
         bottom: 10%;
     }
+    .heroo::before {
+        height: 91%;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -83,40 +73,32 @@
         width: 28%;
     }
     .logo {
-        width: 45%;
+        /* width: 45%; */
     }
     .layer-1-sky {
         bottom: 30%;
-        height: 24%;
     }
     .layer-2-mountains {
         bottom: 24%;
-        height: 29%;
     }
     .layer-3-hills-back {
         bottom: 14%;
-        height: 27%;
     }
     .layer-4-temple {
         width: 37%;
         bottom: 14%;
     }
     .layer-5-jungle-mid {
-        /* bottom: -2%; */
-        height: 34%;
     }
     .layer-6-jungle-front {
-        /* bottom: -8%; */
-        height: 34%;
     }
     .layer-7-foreground {
-        /* bottom: -28%; */
     }
     .about-section-top-divider.scrolled {
-        height: 25%;
+        
     }
     .about-section-bottom-divider {
-        height: 25%;
+        
     }
     .front-bottom-layer-01 {
         bottom: 0%;
