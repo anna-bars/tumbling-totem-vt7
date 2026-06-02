@@ -235,178 +235,39 @@ height: 106vh;
     }
     
 }
-
-
-/* ============================================================
-   MOBILE — 480px and below
-   Fixes:
-   1. Hero always exactly 100svh (no overflow on Samsung/Android)
-   2. Scroll parallax disabled — layers locked in place
-   3. About section — clean layout, dividers fixed
-   4. Featured works — 78vw × 81vh cards, bottom info stacked
-============================================================ */
-@media (max-width: 480px) {
-
-    /* ── 1. HERO HEIGHT ── */
-    /* Use svh (small viewport height) — excludes browser chrome on mobile */
-    .hero {
-        height: 100svh;
-        min-height: 100svh;
+@media (max-width: 600px) {
+        .featured-work-item {
+        height: 93vh;
     }
-
-    /* Fallback for browsers without svh support */
-    @supports not (height: 100svh) {
-        .hero {
-            height: 100vh;
-            min-height: 100vh;
-        }
+    .layer-4-temple {
+        width: 50%;
+        top: 63svh !important;
     }
-
-    /* EST. 2026 / Scroll ↓ / Berlin — always at bottom of visible area */
-    .hero-hint-cta-text {
-        position: absolute;
-        bottom: 5%;
-        z-index: 98;
-        width: 100%;
-        padding: 0 5%;
+        .leaves-left, .leaves-right {
+        width: 49%;
     }
-
-    /* Logo — smaller, more centered vertically */
-    .logo {
-        width: 62%;
-        padding-top: 56px;
-        margin: auto;
+        .logo {
+        padding-top: 127px;
     }
-
-    /* Leaves — smaller on narrow screens */
-    .leaves-left, .leaves-right {
-        width: 52%;
+    .layer-1-sky {
+    bottom: 34%;
     }
-
-   
-
-    /* ── 3. ABOUT SECTION ── */
-    .about {
-        padding: 48px 5% 48px 5%;
+        .layer-2-mountains {
+        bottom: 30%;
     }
-
-    /* Top divider — fixed position, not animated on mobile */
-    .about-section-top-divider {
-        top: -44px;
-        height: auto;
-        width: 100%;
+    .layer-3-hills-back {
+        bottom: 22%;
     }
-    .about-section-top-divider.scrolled {
-        top: -44px; /* no shift on mobile — prevents the gap bug */
-        height: auto;
+        .layer-5-jungle-mid {
+        top: 72.5svh;
     }
-
-    /* Bottom divider */
-    .about-section-bottom-divider {
-        bottom: -44px;
-        height: auto;
-        width: 100%;
+        .layer-6-jungle-front {
+        top: 81svh;
     }
-
-    /* Corner spec-divider icons */
-    .spec-divider-cont img {
-        width: 44px;
-        mix-blend-mode: screen;
+    .layer-7-foreground {
+        top: 79svh;
     }
-    .spec-divider-cont:nth-child(2n) {
-        margin-bottom: 16px;
+        .contact {
+        height: 92vh;
     }
-
-    /* About text */
-    .about-text {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 28px;
-        line-height: 1.25;
-    }
-
-    .about-second-cont {
-        width: 100%;
-        flex-direction: column;
-        gap: 14px;
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 20px;
-    }
-
-    .about-second-cont p {
-        font-size: 15px;
-    }
-
-    .about-second-cont span {
-        width: auto;
-        align-self: flex-start;
-        font-size: 14px;
-    }
-
-    /* ── 4. FEATURED WORKS ── */
-    .featured-works {
-        padding: 72px 0 24px 0;
-    }
-
-    .featured-works-title {
-        font-size: 28px;
-        padding: 0 5%;
-        margin-bottom: 28px;
-    }
-
-    .featured-work-item {
-        width: 78vw;
-        height: 81vh;
-        border-radius: 14px;
-    }
-
-    /* Bottom info — stacked vertically */
-    .work-item-bottom-info {
-        position: absolute;
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
-        display: flex;
-        justify-content: stretch;
-        align-items: baseline;
-        z-index: 5;
-        color: white;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    .work-item-bottom-info-title {
-        font-size: 26px;
-        line-height: 1.1;
-    }
-
-    .work-item-bottom-info-tags {
-        flex-wrap: wrap;
-        gap: 4px;
-    }
-
-    .work-item-bottom-info-tags p {
-        font-size: 12px;
-    }
-
-    /* Top info */
-    .work-item-top-info {
-        top: 16px;
-        left: 16px;
-        right: 16px;
-    }
-
-    .work-item-top-info-category,
-    .work-item-top-info-data {
-        font-size: 12px;
-    }
-}
-
-/* ── Preloader — mobile ── */
-@media (max-width: 480px) {
-    .tt-glyph { width: 88px; height: 88px; }
-    .tt-bar-track { width: 110px; }
 }
