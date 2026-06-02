@@ -231,12 +231,12 @@ height: 106vh;
 }
 @media (max-width: 600px) {
         .featured-work-item {
-        height: 93vh;
-    width: 78vw;
+        height: 80vh;
+    width: 82vw;
     }
     .layer-4-temple {
-        width: 50%;
-        top: 63svh !important;
+        width: 54%;
+        top: 59svh !important;
     }
         .leaves-left, .leaves-right {
         width: 49%;
@@ -245,16 +245,23 @@ height: 106vh;
         padding-top: 127px;
     }
     .layer-1-sky {
-    bottom: 34%;
+    bottom: 36%;
+    height: 15%;
+    border-bottom: 14px solid #19556a;
     }
-        .layer-2-mountains {
-        bottom: 30%;
+    .layer-2-mountains {
+        bottom: 33%;
+        height: 12%;
+        border-bottom: 24px solid #17485a;
     }
-    .layer-3-hills-back {
-        bottom: 22%;
+.layer-3-hills-back {
+        bottom: 25%;
+        height: 15%;
+        border-bottom: 24px solid #143c4a;
     }
         .layer-5-jungle-mid {
         top: 72.5svh;
+        height: 23%;
     }
         .layer-6-jungle-front {
         top: 81svh;
@@ -263,7 +270,7 @@ height: 106vh;
         top: 79svh;
     }
         .contact {
-        height: 92vh;
+        height: 98vh;
     }
     .about-section-top-divider {
         width: 100%;
@@ -312,17 +319,29 @@ height: 106vh;
     position: relative;
     padding: 70px 5.5%;
 }
+    .back-arch-lighter-10 {
+        /* width: 86%; */
+        top: 7%;
+        left: 8%;
+        height: 74%;
+    }
+        .back-arch-darker-09 {
+        width: 98%;
+        top: 2%;
+        left: 2%;
+        height: 84%;
+    }
+    .layer-5-jungle-mid {
+        top: 69.5svh;
+        height: 23%;
+    }
 }
 
 @media (max-width: 425px) {
         .contact {
-        height: 82vh;
+        height: 100vh;
     }
     
-    .layer-3-hills-back {
-        bottom: 22%;
-        height: 15%;
-    }
     .leaves-left, .leaves-right {
         width: 54%;
     }
