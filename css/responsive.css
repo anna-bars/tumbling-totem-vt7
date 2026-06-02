@@ -4,7 +4,7 @@
     }
     .layer-5-jungle-mid {
         /* bottom: -16%; */
-        border-bottom: 38px solid #122E39;
+        /* border-bottom: 38px solid #122E39; */
     }
     .layer-6-jungle-front {
         /* bottom: -22%; */
@@ -43,12 +43,15 @@
     .right-arch-05 {
         height: 66%;
     }
+    .layer-5-jungle-mid {
+        top: 59svh;
+    }
 }
 
 @media (max-width: 1220px) {
     .layer-5-jungle-mid {
         /* bottom: -12%; */
-        border-bottom: 38px solid #122E39;
+        /* border-bottom: 38px solid #122E39; */
     }
     .layer-6-jungle-front {
         /* bottom: -18%; */
@@ -152,7 +155,7 @@
         height: 18%;
         width: 110%;
         margin: auto;
-        border-bottom: 44px solid #1B556A;
+        /* border-bottom: 44px solid #1B556A; */
     }
     .layer-2-mountains {
         bottom: 36%;
