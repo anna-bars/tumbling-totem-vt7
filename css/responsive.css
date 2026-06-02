@@ -232,6 +232,7 @@ height: 106vh;
 @media (max-width: 600px) {
         .featured-work-item {
         height: 93vh;
+    width: 78vw;
     }
     .layer-4-temple {
         width: 50%;
@@ -297,3 +298,12 @@ height: 106vh;
     padding: 0 5.5%;
     }
 }
+
+@media (max-width: 425px) {
+    .layer-3-hills-back {
+        bottom: 22%;
+        height: 15%;
+    }
+}
+
+
