@@ -17,7 +17,7 @@
 <body>
     <div class="hero-cont">
       <div class="heroo">
-        <!-- <div class="bottom-mask"></div> -->
+        <div class="bottom-mask"></div>
           <section class="hero">
         <img loading="eager" decoding="sync" class="darkness" src="./img/hero/darkness.png" alt="">
 
@@ -465,20 +465,31 @@
             const scrollY = window.scrollY;
             const mobile  = isMobile();
 
+            const hero = document.querySelector('.hero');
+
             const bottomMask = document.querySelector('.bottom-mask');
 
-// if (bottomMask) {
-//     // 0 → 700px scroll = 14% → 57%
-//     const progress = Math.min(scrollY / 700, 1);
+            function getMaxMask() {
+    const w = window.innerWidth;
 
-//     const startHeight = 4;
-//     const endHeight = 57;
+    if (w > 1440) return 2;   // large desktop
+    if (w > 1220) return 4;   // normal desktop
+    if (w > 1024) return 6;   // small laptop
+    if (w > 768) return 10;    // tablet
+    return 1;                // mobile
+}
+if (bottomMask) {
+    // 0 → 700px scroll = 14% → 57%
+    const progress = Math.min(scrollY / 700, 1);
 
-//     const currentHeight =
-//         startHeight + (endHeight - startHeight) * progress;
+    const startHeight = 4;
+    const endHeight = getMaxMask();
 
-//     bottomMask.style.height = `${currentHeight}%`;
-// }
+    const currentHeight =
+        startHeight + (endHeight - startHeight) * progress;
+
+    bottomMask.style.height = `${currentHeight}%`;
+}
 
 
             // SCROLL PARALLAX
@@ -499,8 +510,8 @@ function getMaxMove() {
     if (w > 1440) return 250;   // large desktop
     if (w > 1220) return 180;   // normal desktop
     if (w > 1024) return 140;   // small laptop
-    if (w > 768) return 80;    // tablet
-    return 100;                // mobile
+    if (w > 768) return 60;    // tablet
+    return 50;                // mobile
 }
 
             items.forEach(item => {
@@ -511,13 +522,21 @@ function getMaxMove() {
 
                 const MAX_MOVE = getMaxMove();
 
-                const scrollMove = Math.min(
-                    scrollY * speed,
-                    MAX_MOVE
-                );
-
+                const scrollMove = (scrollY * speed) / (1 + (scrollY / 800));
                 item.el.style.transform = `translate3d(0, -${scrollMove}px, 0) scale(1.04)`;
             });
+
+            const maxScroll = 700; // որտեղ պետք է հասնի 102vh-ին
+
+const progress = Math.min(scrollY / maxScroll, 1);
+
+// 108vh → 102vh
+const startHeight = 108;
+const endHeight = 102;
+
+const currentHeight = startHeight + (endHeight - startHeight) * progress;
+
+hero.style.height = `${currentHeight}vh`;
 
             // MOUSE PARALLAX — desktop only
             if (!mobile) {

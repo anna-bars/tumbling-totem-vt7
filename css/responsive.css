@@ -96,30 +96,17 @@ height: 106vh;
     .logo {
         /* width: 45%; */
     }
-    .layer-1-sky {
-        bottom: 30%;
-    }
-    .layer-2-mountains {
-        bottom: 24%;
-    }
-    .layer-3-hills-back {
-        bottom: 14%;
-    }
-    .layer-4-temple {
-        width: 37%;
-        bottom: 14%;
+    .layer-7-foreground {
+        top: 76svh;
     }
     .layer-5-jungle-mid {
-    }
-    .layer-6-jungle-front {
-    }
-    .layer-7-foreground {
-    }
+    top: 74svh;
+}
+.layer-4-temple {
+    top: 68svh;
+}
     .about-section-top-divider.scrolled {
-        
-    }
-    .about-section-bottom-divider {
-        
+        top: -42px;
     }
     .front-bottom-layer-01 {
         bottom: 0%;
@@ -143,6 +130,9 @@ height: 106vh;
     .about-second-cont {
         width: 84%;
         margin-right: 0%;
+    }
+    .featured-work-item {
+        height: 74vh;
     }
 }
 

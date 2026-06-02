@@ -185,6 +185,7 @@ height: 108vh;
     position: relative;
     padding: 70px 2.5%;
     background: url(./img/about/background.png);
+    margin-top: -8px;
 }
 .about-section-top-divider {
     position: absolute;
