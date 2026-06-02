@@ -496,10 +496,10 @@
 function getMaxMove() {
     const w = window.innerWidth;
 
-    if (w > 1440) return 300;   // large desktop
-    if (w > 1220) return 250;   // normal desktop
-    if (w > 1024) return 180;   // small laptop
-    if (w > 768) return 140;    // tablet
+    if (w > 1440) return 250;   // large desktop
+    if (w > 1220) return 180;   // normal desktop
+    if (w > 1024) return 140;   // small laptop
+    if (w > 768) return 80;    // tablet
     return 100;                // mobile
 }
 
