@@ -297,13 +297,61 @@ height: 106vh;
 
     padding: 0 5.5%;
     }
+        h1 {
+        font-size: 28px;
+    }
+    .about-second-cont p {
+    color: #ffeded6a;
+    font-size: 14px;
+}
+.about-second-cont p {
+    color: #ffeded6a;
+    font-size: 14px;
+}
+.about {
+    position: relative;
+    padding: 70px 5.5%;
+}
 }
 
 @media (max-width: 425px) {
+        .contact {
+        height: 82vh;
+    }
+    
     .layer-3-hills-back {
         bottom: 22%;
         height: 15%;
     }
+    .leaves-left, .leaves-right {
+        width: 54%;
+    }
+        .logo {
+        width: 50%;
+    }
+    .contact-wrapper {
+    padding-bottom: 72px;
+    background-color: #0d161a;
 }
-
+.inscription-email {
+    font-size: 14px;
+}
+}
+@media (max-width: 375px){
+        .layer-4-temple {
+        width: 58%;
+        top: 62svh !important;
+    }
+        .layer-1-sky {
+        bottom: 33%;
+        height: 14%;
+    }
+    .layer-2-mountains {
+        bottom: 31%;
+    }
+        .layer-3-hills-back {
+        bottom: 23%;
+        height: 15%;
+    }
+}
 
