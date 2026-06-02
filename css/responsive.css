@@ -371,5 +371,16 @@ height: 106vh;
         bottom: 23%;
         height: 15%;
     }
+        .contact {
+        height: 93vh;
+    }
+    .layer-5-jungle-mid {
+        top: 70.5svh;
+        height: 23%;
+    }
+        .layer-4-temple {
+        width: 59%;
+        top: 62svh !important;
+    }
 }
 
