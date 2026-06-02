@@ -499,7 +499,14 @@
                 const speed = mobile
                     ? (mobileSpeedMap[layers.find(l => item.el.matches(l.selector))?.selector] ?? item.scrollSpeed * 0.3)
                     : item.scrollSpeed;
-                const scrollMove = scrollY * speed;
+
+                const MAX_MOVE = 250; // փորձիր 200-350
+
+const scrollMove = Math.min(
+    scrollY * speed,
+    MAX_MOVE
+);
+
                 item.el.style.transform = `translate3d(0, -${scrollMove}px, 0) scale(1.04)`;
             });
 
