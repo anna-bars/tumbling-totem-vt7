@@ -174,8 +174,13 @@ height: 106vh;
     .logo {
         padding-top: 145px;
     }
-   
-
+   .about-second-cont span {
+    font-size: 13px;
+    width: fit-content;
+   }
+.about-text .about-second-cont p {
+    width: 79%;
+}
     .totem-06 {
         height: 44%;
         bottom: 4%;

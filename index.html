@@ -475,8 +475,8 @@
     if (w > 1440) return 2;   // large desktop
     if (w > 1220) return 4;   // normal desktop
     if (w > 1024) return 6;   // small laptop
-    if (w > 768) return 10;    // tablet
-    return 1;                // mobile
+    if (w > 768) return 8;    // tablet
+    return 18;                // mobile
 }
 if (bottomMask) {
     // 0 → 700px scroll = 14% → 57%
@@ -511,7 +511,7 @@ function getMaxMove() {
     if (w > 1220) return 180;   // normal desktop
     if (w > 1024) return 140;   // small laptop
     if (w > 768) return 60;    // tablet
-    return 50;                // mobile
+    return 40;                // mobile
 }
 
             items.forEach(item => {
