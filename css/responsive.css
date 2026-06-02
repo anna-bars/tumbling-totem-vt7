@@ -46,9 +46,27 @@
     .layer-5-jungle-mid {
         top: 59svh;
     }
+    .layer-7-foreground {
+        top: 58svh;
+    }
 }
 
 @media (max-width: 1220px) {
+    .layer-7-foreground {
+        top: 74svh;
+    }
+    .layer-5-jungle-mid {
+        top: 69svh;
+    }
+    .layer-4-temple {
+        top: 64svh;
+    }
+    .hero {
+height: 106vh;
+    }
+    .layer-6-jungle-front {
+        top: 83svh;
+    }
     .about-section-top-divider.scrolled {
         top: -97px;
     }

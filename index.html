@@ -493,6 +493,15 @@
                 '.layer-6-jungle-front': 0.34,
                 '.layer-7-foreground':   0.54,     // locked — prevents foreground gap on mobile
             };
+function getMaxMove() {
+    const w = window.innerWidth;
+
+    if (w > 1440) return 300;   // large desktop
+    if (w > 1220) return 250;   // normal desktop
+    if (w > 1024) return 180;   // small laptop
+    if (w > 768) return 140;    // tablet
+    return 100;                // mobile
+}
 
             items.forEach(item => {
                 if (!item.el) return;
@@ -500,12 +509,12 @@
                     ? (mobileSpeedMap[layers.find(l => item.el.matches(l.selector))?.selector] ?? item.scrollSpeed * 0.3)
                     : item.scrollSpeed;
 
-                const MAX_MOVE = 250; // փորձիր 200-350
+                const MAX_MOVE = getMaxMove();
 
-const scrollMove = Math.min(
-    scrollY * speed,
-    MAX_MOVE
-);
+                const scrollMove = Math.min(
+                    scrollY * speed,
+                    MAX_MOVE
+                );
 
                 item.el.style.transform = `translate3d(0, -${scrollMove}px, 0) scale(1.04)`;
             });
