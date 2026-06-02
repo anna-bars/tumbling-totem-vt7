@@ -185,13 +185,7 @@ height: 106vh;
         height: 44%;
         bottom: 4%;
     }
-    .about-section-top-divider.scrolled {
-        height: 20%;
-        top: -55px;
-    }
-    .about-section-bottom-divider {
-        height: 18%;
-    }
+
     .contact {
         height: 98vh;
     }
@@ -269,5 +263,37 @@ height: 106vh;
     }
         .contact {
         height: 92vh;
+    }
+    .about-section-top-divider {
+        width: 100%;
+    transform: scaleY(1.5);
+    top: -30px;
+    }
+    .about-section-bottom-divider {
+        transform: scaleY(1.5);
+    bottom: -30px;
+    }
+    .work-item-bottom-info-title {
+    font-size: 24px;
+    }
+    .work-item-bottom-info-tags p {
+    font-size: 10px;
+    }
+    .work-item-top-info-category {
+    font-size: 13px;
+    }
+    .work-item-top-info-data {
+    font-size: 14px;
+    }
+    .featured-works-title {
+    padding: 0 5.5%;
+    font-size: 32px;
+    }
+    .hero-hint-cta-text p {
+    font-size: 14px;
+    }
+    .hero-hint-cta-text {
+
+    padding: 0 5.5%;
     }
 }
