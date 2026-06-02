@@ -1,0 +1,449 @@
+@media (max-width: 1440px) {
+    .layer-4-temple {
+        width: 34%;
+    }
+    .layer-5-jungle-mid {
+        /* bottom: -16%; */
+        border-bottom: 38px solid #122E39;
+    }
+    .layer-6-jungle-front {
+        /* bottom: -22%; */
+    } 
+    .layer-7-foreground {
+        width: 100%;
+        position: absolute;
+        /* bottom: -148%; */
+        z-index: 7;
+    }
+    .about-section-top-divider.scrolled {
+        top: -112px;
+    }
+    .heroo::before {
+        height: 24%;
+    }
+    .front-bottom-layer-01 {
+        bottom: 0%;
+    }
+    .front-layer-top-02 {
+        height: 35%;
+    }
+    .front-layer-top-leaves-02 {
+        height: 44%;
+    }
+    .top-arch-03 {
+        top: 4.5%;
+        height: 22%;
+    }
+    .contact {
+        height: 110vh;
+    }
+    .left-arch-04 {
+        height: 66%;
+    }
+    .right-arch-05 {
+        height: 66%;
+    }
+}
+
+@media (max-width: 1220px) {
+    .layer-5-jungle-mid {
+        /* bottom: -12%; */
+        border-bottom: 38px solid #122E39;
+    }
+    .layer-6-jungle-front {
+        /* bottom: -18%; */
+    } 
+    .layer-7-foreground {
+        width: 100%;
+        position: absolute;
+        /* bottom: -36%; */
+        z-index: 7;
+    }
+    .about-section-top-divider.scrolled {
+        top: -97px;
+    }
+    .about-second-cont {
+        width: 63%;
+    }
+    .left-arch-04 {
+        height: 70%;
+        bottom: 10%;
+    }
+    .right-arch-05 {
+        height: 70%;
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .leaves-left, .leaves-right {
+        width: 28%;
+    }
+    .logo {
+        width: 45%;
+    }
+    .layer-1-sky {
+        bottom: 30%;
+        height: 24%;
+    }
+    .layer-2-mountains {
+        bottom: 24%;
+        height: 29%;
+    }
+    .layer-3-hills-back {
+        bottom: 14%;
+        height: 27%;
+    }
+    .layer-4-temple {
+        width: 37%;
+        bottom: 14%;
+    }
+    .layer-5-jungle-mid {
+        /* bottom: -2%; */
+        height: 34%;
+    }
+    .layer-6-jungle-front {
+        /* bottom: -8%; */
+        height: 34%;
+    }
+    .layer-7-foreground {
+        /* bottom: -28%; */
+    }
+    .about-section-top-divider.scrolled {
+        height: 25%;
+    }
+    .about-section-bottom-divider {
+        height: 25%;
+    }
+    .front-bottom-layer-01 {
+        bottom: 0%;
+        height: 31%;
+    }
+    .totem-light-07 {
+        left: 38%;
+        width: 23%;
+    }
+    .totem-left-arch-08 {
+        left: 18.3%;
+        width: 18.4%;
+    }
+    .totem-right-arch-08 {
+        right: 18.3%;
+        width: 18.4%;
+    }
+    h1 {
+        font-size: 38px;
+    }
+    .about-second-cont {
+        width: 84%;
+        margin-right: 0%;
+    }
+}
+
+@media (max-width: 768px) {
+    .leaves-left, .leaves-right {
+        width: 44%;
+    }
+    .logo {
+        padding-top: 145px;
+    }
+    .layer-1-sky {
+        bottom: 40%;
+        height: 18%;
+        width: 110%;
+        margin: auto;
+        border-bottom: 44px solid #1B556A;
+    }
+    .layer-2-mountains {
+        bottom: 36%;
+        height: 22%;
+        width: 110%;
+    }
+    .layer-3-hills-back {
+        bottom: 30%;
+        height: 18%;
+    }
+    .layer-4-temple {
+        width: 48%;
+        bottom: 29%;
+    }
+    .layer-5-jungle-mid {
+        /* bottom: 19%; */
+        height: 22%;
+    }
+    .layer-6-jungle-front {
+        /* bottom: 10%; */
+        height: 28%;
+    }
+    .layer-7-foreground {
+        /* bottom: 2%; */
+    }
+    .heroo::before {
+        height: 44%;
+    }
+    .totem-06 {
+        height: 44%;
+        bottom: 4%;
+    }
+    .about-section-top-divider.scrolled {
+        height: 20%;
+        top: -55px;
+    }
+    .about-section-bottom-divider {
+        height: 18%;
+    }
+    .contact {
+        height: 98vh;
+    }
+    .about-second-cont {
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .totem-light-07 {
+        left: 35%;
+        width: 28%;
+    }
+    .totem-left-arch-08 {
+        left: 13.3%;
+        width: 20.4%;
+        top: 10%;
+    }
+    .totem-right-arch-08 {
+        right: 10.3%;
+        width: 24.4%;
+        top: 10%;
+    }
+    .top-arch-03 {
+        top: 5.5%;
+        height: 16%;
+    }
+    .front-layer-top-leaves-02 {
+        height: 34%;
+    }
+    .back-arch-darker-09 {
+        width: 96%;
+        top: 2%;
+        left: 2%;
+        height: 84%;
+    }
+    .back-arch-lighter-10 {
+        width: 82%;
+        top: 9%;
+        left: 9%;
+        height: 74%;
+    }
+    .fog_olips_left, .fog_olips_right {
+        bottom: 37%;
+    }
+}
+
+
+/* ============================================================
+   MOBILE — 480px and below
+   Fixes:
+   1. Hero always exactly 100svh (no overflow on Samsung/Android)
+   2. Scroll parallax disabled — layers locked in place
+   3. About section — clean layout, dividers fixed
+   4. Featured works — 78vw × 81vh cards, bottom info stacked
+============================================================ */
+@media (max-width: 480px) {
+
+    /* ── 1. HERO HEIGHT ── */
+    /* Use svh (small viewport height) — excludes browser chrome on mobile */
+    .hero {
+        height: 100svh;
+        min-height: 100svh;
+    }
+
+    /* Fallback for browsers without svh support */
+    @supports not (height: 100svh) {
+        .hero {
+            height: 100vh;
+            min-height: 100vh;
+        }
+    }
+
+    /* EST. 2026 / Scroll ↓ / Berlin — always at bottom of visible area */
+    .hero-hint-cta-text {
+        position: absolute;
+        bottom: 5%;
+        z-index: 98;
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    /* Logo — smaller, more centered vertically */
+    .logo {
+        width: 62%;
+        padding-top: 56px;
+        margin: auto;
+    }
+
+    /* Leaves — smaller on narrow screens */
+    .leaves-left, .leaves-right {
+        width: 52%;
+    }
+
+    /* ── 2. HERO LAYERS — adjusted for mobile viewport ── */
+    .layer-1-sky {
+        bottom: 44%;
+        height: 16%;
+        width: 110%;
+    }
+    .layer-2-mountains {
+        bottom: 38%;
+        height: 20%;
+        width: 110%;
+    }
+    .layer-3-hills-back {
+        bottom: 31%;
+        height: 16%;
+    }
+    .layer-4-temple {
+        width: 54%;
+        bottom: 29%;
+    }
+    .layer-5-jungle-mid {
+        /* bottom: 20%; */
+        height: 20%;
+    }
+    .layer-6-jungle-front {
+        /* bottom: 11%; */
+        height: 26%;
+    }
+    /* layer-7-foreground: lock to bottom, no scroll parallax movement */
+    .layer-7-foreground {
+        /* bottom: 0%; */
+        position: absolute;
+    }
+
+    .heroo::before {
+        height: 48%;
+    }
+
+    /* ── 3. ABOUT SECTION ── */
+    .about {
+        padding: 48px 5% 48px 5%;
+    }
+
+    /* Top divider — fixed position, not animated on mobile */
+    .about-section-top-divider {
+        top: -44px;
+        height: auto;
+        width: 100%;
+    }
+    .about-section-top-divider.scrolled {
+        top: -44px; /* no shift on mobile — prevents the gap bug */
+        height: auto;
+    }
+
+    /* Bottom divider */
+    .about-section-bottom-divider {
+        bottom: -44px;
+        height: auto;
+        width: 100%;
+    }
+
+    /* Corner spec-divider icons */
+    .spec-divider-cont img {
+        width: 44px;
+        mix-blend-mode: screen;
+    }
+    .spec-divider-cont:nth-child(2n) {
+        margin-bottom: 16px;
+    }
+
+    /* About text */
+    .about-text {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .about-second-cont {
+        width: 100%;
+        flex-direction: column;
+        gap: 14px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .about-second-cont p {
+        font-size: 15px;
+    }
+
+    .about-second-cont span {
+        width: auto;
+        align-self: flex-start;
+        font-size: 14px;
+    }
+
+    /* ── 4. FEATURED WORKS ── */
+    .featured-works {
+        padding: 72px 0 24px 0;
+    }
+
+    .featured-works-title {
+        font-size: 28px;
+        padding: 0 5%;
+        margin-bottom: 28px;
+    }
+
+    .featured-work-item {
+        width: 78vw;
+        height: 81vh;
+        border-radius: 14px;
+    }
+
+    /* Bottom info — stacked vertically */
+    .work-item-bottom-info {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        justify-content: stretch;
+        align-items: baseline;
+        z-index: 5;
+        color: white;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .work-item-bottom-info-title {
+        font-size: 26px;
+        line-height: 1.1;
+    }
+
+    .work-item-bottom-info-tags {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .work-item-bottom-info-tags p {
+        font-size: 12px;
+    }
+
+    /* Top info */
+    .work-item-top-info {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .work-item-top-info-category,
+    .work-item-top-info-data {
+        font-size: 12px;
+    }
+}
+
+/* ── Preloader — mobile ── */
+@media (max-width: 480px) {
+    .tt-glyph { width: 88px; height: 88px; }
+    .tt-bar-track { width: 110px; }
+}
