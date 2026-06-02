@@ -528,13 +528,16 @@ function getMaxMove() {
 
             const maxScroll = 700; // որտեղ պետք է հասնի 102vh-ին
 
+const width = window.innerWidth;
+
+const config = width > 1024
+    ? { start: 108, end: 102 }
+    : { start: 108, end: 96 };
+
 const progress = Math.min(scrollY / maxScroll, 1);
 
-// 108vh → 102vh
-const startHeight = 108;
-const endHeight = 102;
-
-const currentHeight = startHeight + (endHeight - startHeight) * progress;
+const currentHeight =
+    config.start + (config.end - config.start) * progress;
 
 hero.style.height = `${currentHeight}vh`;
 

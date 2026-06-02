@@ -93,14 +93,18 @@ height: 106vh;
     .leaves-left, .leaves-right {
         width: 28%;
     }
+    .layer-4-temple {
+        width: 42%;
+        top: 64svh !important;
+    }
     .logo {
-        /* width: 45%; */
+        width: 45%;
     }
     .layer-7-foreground {
         top: 76svh;
     }
     .layer-5-jungle-mid {
-    top: 74svh;
+    top: 73.5svh;
 }
 .layer-4-temple {
     top: 68svh;
@@ -132,7 +136,34 @@ height: 106vh;
         margin-right: 0%;
     }
     .featured-work-item {
-        height: 74vh;
+        height: 68vh;
+    }
+    .totem-06 { 
+        height: 51%;
+        bottom: 5%;
+
+    }
+    .work-item-bottom-info {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        justify-content: stretch;
+        align-items: baseline;
+        z-index: 5;
+        color: white;
+        flex-direction: column-reverse;
+        gap: 6px;
+    }
+    .layer-2-mountains {
+        bottom: 21%;
+    }
+    .layer-3-hills-back {
+        bottom: 13%;
+    }
+    .fog_olips_left, .fog_olips_right {
+        bottom: 25%;
     }
 }
 
@@ -143,40 +174,8 @@ height: 106vh;
     .logo {
         padding-top: 145px;
     }
-    .layer-1-sky {
-        bottom: 40%;
-        height: 18%;
-        width: 110%;
-        margin: auto;
-        /* border-bottom: 44px solid #1B556A; */
-    }
-    .layer-2-mountains {
-        bottom: 36%;
-        height: 22%;
-        width: 110%;
-    }
-    .layer-3-hills-back {
-        bottom: 30%;
-        height: 18%;
-    }
-    .layer-4-temple {
-        width: 48%;
-        bottom: 29%;
-    }
-    .layer-5-jungle-mid {
-        /* bottom: 19%; */
-        height: 22%;
-    }
-    .layer-6-jungle-front {
-        /* bottom: 10%; */
-        height: 28%;
-    }
-    .layer-7-foreground {
-        /* bottom: 2%; */
-    }
-    .heroo::before {
-        height: 44%;
-    }
+   
+
     .totem-06 {
         height: 44%;
         bottom: 4%;
@@ -229,9 +228,7 @@ height: 106vh;
         left: 9%;
         height: 74%;
     }
-    .fog_olips_left, .fog_olips_right {
-        bottom: 37%;
-    }
+    
 }
 
 
@@ -281,42 +278,7 @@ height: 106vh;
         width: 52%;
     }
 
-    /* ── 2. HERO LAYERS — adjusted for mobile viewport ── */
-    .layer-1-sky {
-        bottom: 44%;
-        height: 16%;
-        width: 110%;
-    }
-    .layer-2-mountains {
-        bottom: 38%;
-        height: 20%;
-        width: 110%;
-    }
-    .layer-3-hills-back {
-        bottom: 31%;
-        height: 16%;
-    }
-    .layer-4-temple {
-        width: 54%;
-        bottom: 29%;
-    }
-    .layer-5-jungle-mid {
-        /* bottom: 20%; */
-        height: 20%;
-    }
-    .layer-6-jungle-front {
-        /* bottom: 11%; */
-        height: 26%;
-    }
-    /* layer-7-foreground: lock to bottom, no scroll parallax movement */
-    .layer-7-foreground {
-        /* bottom: 0%; */
-        position: absolute;
-    }
-
-    .heroo::before {
-        height: 48%;
-    }
+   
 
     /* ── 3. ABOUT SECTION ── */
     .about {
