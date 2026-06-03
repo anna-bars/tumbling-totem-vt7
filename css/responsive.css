@@ -228,7 +228,12 @@ height: 106vh;
         height: 74%;
     }
     .spec-divider-cont img {
-    width: 40px;
+        width: 40px;
+    }
+    .layer-light-07-1 {
+top: auto;
+    left: 35%;
+    bottom: 33%;
 }
 }
 @media (max-width: 600px) {
@@ -272,7 +277,7 @@ height: 106vh;
         top: 79svh;
     }
         .contact {
-        height: 98vh;
+        height: 93vh;
     }
     .about-section-top-divider {
         width: 100%;
@@ -341,12 +346,11 @@ height: 106vh;
 
 @media (max-width: 425px) {
            .contact {
-        height: 70vh;
         transform: scale(1.2);
     }
         .contact-wrapper {
         overflow: hidden;
-        height: 80vh;
+        height: 107vh;
     }
     .leaves-left, .leaves-right {
         width: 54%;
@@ -378,7 +382,10 @@ height: 106vh;
         height: 15%;
     }
         .contact {
-        height: 93vh;
+        height: 89vh;
+    }
+        .contact-wrapper {
+        height: 98vh;
     }
     .layer-5-jungle-mid {
         top: 70.5svh;
@@ -468,5 +475,21 @@ height: 106vh;
     }
         .inscription-email {
         font-size: 10px;
+    }
+}
+/* iPad Portrait-ի նման */
+@media (max-width: 768px) and (min-height: 900px) {
+    .layer-1-sky {
+        bottom: 32%;
+    }
+    .layer-2-mountains {
+        bottom: 27%;
+    }
+        .layer-3-hills-back {
+        bottom: 20%;
+    }
+        .layer-4-temple {
+        width: 46%;
+        top: 66svh !important;
     }
 }
