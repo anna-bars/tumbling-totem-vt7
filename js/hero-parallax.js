@@ -120,10 +120,10 @@ function animate() {
 
     // Leaves — much more subtle now
     if (layers.leavesLeft) {
-        layers.leavesLeft.style.transform = `translate(${mouseX * 4 - progress * 40}px, ${-progress * 90}px) scale(${scale})`;
+        layers.leavesLeft.style.transform = `translate(${mouseX * 4 - progress * 40}px, ${-progress * 90}px) scale(1.05)`;
     }
     if (layers.leavesRight) {
-        layers.leavesRight.style.transform = `translate(${mouseX * 4 + progress * 40}px, ${-progress * 90}px) scale(${scale})`;
+        layers.leavesRight.style.transform = `translate(${mouseX * 4 + progress * 40}px, ${-progress * 90}px) scale(1.05)`;
     }
 }
 
