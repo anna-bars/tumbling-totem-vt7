@@ -106,7 +106,7 @@ height: 108svh;
 .layer-7-foreground {
     width: 100%;
     position: absolute;
-    top: 56svh;
+    top: 64svh;
     /* bottom: -98%; */
     z-index: 7;
 }
