@@ -12,6 +12,7 @@ const layers = {
 };
 
 const isMobile = window.innerWidth <= 768;
+const scale = isMobile ? 1.2 : 1;
 
 // Desktop values
 const desktopDepth = {
@@ -51,13 +52,11 @@ function animate() {
         0.08
     );
 
-    // միայն hero հատվածում
     const progress = Math.min(
         currentScroll / window.innerHeight,
         1
     );
 
-    // Desktop / Mobile range
     const move = isMobile
         ? progress * 180
         : progress * 450;
@@ -65,37 +64,37 @@ function animate() {
     // SKY
     if (layers.sky)
         layers.sky.style.transform =
-            `translateY(${-move * depth.sky}px)`;
+            `translateY(${-move * depth.sky}px) scale(${scale})`;
 
     // MOUNTAINS
     if (layers.mountains)
         layers.mountains.style.transform =
-            `translateY(${-move * depth.mountains}px)`;
+            `translateY(${-move * depth.mountains}px) scale(${scale})`;
 
     // HILLS
     if (layers.hills)
         layers.hills.style.transform =
-            `translateY(${-move * depth.hills}px)`;
+            `translateY(${-move * depth.hills}px) scale(${scale})`;
 
     // TEMPLE
     if (layers.temple)
         layers.temple.style.transform =
-            `translateY(${-move * depth.temple}px)`;
+            `translateY(${-move * depth.temple}px) scale(${scale})`;
 
     // JUNGLE MID
     if (layers.jungleMid)
         layers.jungleMid.style.transform =
-            `translateY(${-move * depth.jungleMid}px)`;
+            `translateY(${-move * depth.jungleMid}px) scale(${scale})`;
 
     // JUNGLE FRONT
     if (layers.jungleFront)
         layers.jungleFront.style.transform =
-            `translateY(${-move * depth.jungleFront}px)`;
+            `translateY(${-move * depth.jungleFront}px) scale(${scale})`;
 
     // FOREGROUND
     if (layers.foreground)
         layers.foreground.style.transform =
-            `translateY(${-move * depth.foreground}px)`;
+            `translateY(${-move * depth.foreground}px) scale(${scale})`;
 
     // 🍃 LEFT LEAF
     if (layers.leavesLeft) {
@@ -114,7 +113,8 @@ function animate() {
 
         layers.leavesLeft.style.transform =
             `translate(${x}px, ${y}px)
-             rotate(${rotate}deg)`;
+             rotate(${rotate}deg)
+             scale(${scale})`;
     }
 
     // 🍃 RIGHT LEAF
@@ -134,7 +134,8 @@ function animate() {
 
         layers.leavesRight.style.transform =
             `translate(${x}px, ${y}px)
-             rotate(${rotate}deg)`;
+             rotate(${rotate}deg)
+             scale(${scale})`;
     }
 
     requestAnimationFrame(animate);
