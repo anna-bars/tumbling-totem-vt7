@@ -100,7 +100,7 @@ function animate() {
     mouseX = lerp(mouseX, targetMouseX, 0.06);
 
     const progress = Math.min(currentScroll / window.innerHeight, 1);
-    const move = isMobile ? progress * 110 : progress * 450;
+    const move = isMobile ? progress * 140 : progress * 450;
 
     // Reduced mouse strength
     const mouseStrength = isMobile ? 1.5 : 3;
