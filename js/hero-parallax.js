@@ -12,7 +12,7 @@ const layers = {
 };
 
 const isMobile = window.innerWidth <= 768;
-const scale = isMobile ? 1.2 : 1;
+const scale = isMobile ? 1.3 : 1.1;
 
 // Desktop values
 const desktopDepth = {
@@ -41,108 +41,116 @@ const depth = isMobile ? mobileDepth : desktopDepth;
 const lerp = (start, end, amount) =>
     start + (end - start) * amount;
 
+// scroll state
 let targetScroll = 0;
 let currentScroll = 0;
 
-function animate() {
+// 🎯 mouse state (NEW)
+let targetMouseX = 0;
+let mouseX = 0;
 
-    currentScroll = lerp(
-        currentScroll,
-        targetScroll,
-        0.08
-    );
+// mouse tracking
+window.addEventListener("mousemove", (e) => {
+    targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2; // -1 → 1
+});
 
-    const progress = Math.min(
-        currentScroll / window.innerHeight,
-        1
-    );
-
-    const move = isMobile
-        ? progress * 180
-        : progress * 450;
-
-    // SKY
-    if (layers.sky)
-        layers.sky.style.transform =
-            `translateY(${-move * depth.sky}px) scale(${scale})`;
-
-    // MOUNTAINS
-    if (layers.mountains)
-        layers.mountains.style.transform =
-            `translateY(${-move * depth.mountains}px) scale(${scale})`;
-
-    // HILLS
-    if (layers.hills)
-        layers.hills.style.transform =
-            `translateY(${-move * depth.hills}px) scale(${scale})`;
-
-    // TEMPLE
-    if (layers.temple)
-        layers.temple.style.transform =
-            `translateY(${-move * depth.temple}px) scale(${scale})`;
-
-    // JUNGLE MID
-    if (layers.jungleMid)
-        layers.jungleMid.style.transform =
-            `translateY(${-move * depth.jungleMid}px) scale(${scale})`;
-
-    // JUNGLE FRONT
-    if (layers.jungleFront)
-        layers.jungleFront.style.transform =
-            `translateY(${-move * depth.jungleFront}px) scale(${scale})`;
-
-    // FOREGROUND
-    if (layers.foreground)
-        layers.foreground.style.transform =
-            `translateY(${-move * depth.foreground}px) scale(${scale})`;
-
-    // 🍃 LEFT LEAF
-    if (layers.leavesLeft) {
-
-        const x = isMobile
-            ? -progress * 25
-            : -progress * 80;
-
-        const y = isMobile
-            ? -progress * 40
-            : -progress * 180;
-
-        const rotate = isMobile
-            ? -2
-            : -4;
-
-        layers.leavesLeft.style.transform =
-            `translate(${x}px, ${y}px)
-             rotate(${rotate}deg)
-             scale(${scale})`;
-    }
-
-    // 🍃 RIGHT LEAF
-    if (layers.leavesRight) {
-
-        const x = isMobile
-            ? progress * 25
-            : progress * 80;
-
-        const y = isMobile
-            ? -progress * 40
-            : -progress * 180;
-
-        const rotate = isMobile
-            ? 2
-            : 4;
-
-        layers.leavesRight.style.transform =
-            `translate(${x}px, ${y}px)
-             rotate(${rotate}deg)
-             scale(${scale})`;
-    }
-
-    requestAnimationFrame(animate);
-}
-
+// scroll tracking
 window.addEventListener("scroll", () => {
     targetScroll = window.scrollY;
 });
+const logo = document.querySelector(".logo");
+
+if (logo) {
+    let hover = false;
+
+    logo.addEventListener("mouseenter", () => {
+        hover = true;
+    });
+
+    logo.addEventListener("mouseleave", () => {
+        hover = false;
+
+        // reset smoothly
+        logo.style.transform = `translate(0px, 0px) scale(1)`;
+    });
+
+    logo.addEventListener("mousemove", (e) => {
+        if (!hover) return;
+
+        const rect = logo.getBoundingClientRect();
+
+        // normalize mouse inside logo (-1 to 1)
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+        // VERY small movement
+        const moveX = x * 6;
+        const moveY = y * 4;
+
+        const scale = 1.03; // subtle zoom only
+
+        logo.style.transform = `
+            translate(${moveX}px, ${moveY}px)
+            scale(${scale})
+        `;
+    });
+}
+function animate() {
+    requestAnimationFrame(animate);
+
+    // smooth scroll + mouse
+    currentScroll = lerp(currentScroll, targetScroll, 0.08);
+    mouseX = lerp(mouseX, targetMouseX, 0.06);
+
+    const progress = Math.min(currentScroll / window.innerHeight, 1);
+
+    const move = isMobile ? progress * 180 : progress * 450;
+
+    // 🔥 VERY SMALL mouse strength (IMPORTANT)
+    const mouseStrength = isMobile ? 3 : 6;
+
+    // helper
+    const apply = (el, d) => {
+        if (!el) return;
+
+        const x = mouseX * mouseStrength * d;
+        const y = -move * d;
+
+        el.style.transform = `
+            translate(${x}px, ${y}px)
+            scale(${scale})
+        `;
+    };
+
+    // BACK LAYERS
+    apply(layers.sky, depth.sky);
+    apply(layers.mountains, depth.mountains);
+    apply(layers.hills, depth.hills);
+    apply(layers.temple, depth.temple);
+    apply(layers.jungleMid, depth.jungleMid);
+    apply(layers.jungleFront, depth.jungleFront);
+    apply(layers.foreground, depth.foreground);
+
+    // 🍃 LEAVES (slightly stronger but still subtle)
+    if (layers.leavesLeft) {
+        layers.leavesLeft.style.transform = `
+            translate(
+                ${mouseX * 10 - progress * 80}px,
+                ${-progress * 180}px
+            )
+            scale(${scale})
+        `;
+    }
+
+    if (layers.leavesRight) {
+        layers.leavesRight.style.transform = `
+            translate(
+                ${mouseX * 10 + progress * 80}px,
+                ${-progress * 180}px
+            )
+            scale(${scale})
+        `;
+    }
+}
 
 animate();
