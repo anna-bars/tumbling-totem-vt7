@@ -217,7 +217,7 @@ height: 108vh;
     justify-content: space-between;
 }
 .spec-divider-cont:nth-child(2n) {
-    margin-bottom: 24px;
+    margin-top: 24px;
 }
 
 

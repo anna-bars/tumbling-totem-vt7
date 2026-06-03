@@ -227,7 +227,9 @@ height: 106vh;
         left: 9%;
         height: 74%;
     }
-    
+    .spec-divider-cont img {
+    width: 40px;
+}
 }
 @media (max-width: 600px) {
         .featured-work-item {
@@ -383,4 +385,69 @@ height: 106vh;
         top: 62svh !important;
     }
 }
+@media (max-width: 320px){
+        .logo {
+        width: 54%;
+    }
+        .layer-1-sky {
+        bottom: 36%;
+        height: 12%;
+    }
+    .layer-2-mountains {
+        bottom: 31%;
+    }
+        .layer-4-temple {
+        width: 68%;
+        top: 62svh !important;
+    }
+        .layer-5-jungle-mid {
+        top: 69.5svh;
+        height: 21%;
+    }
+        .layer-6-jungle-front {
+        top: 80svh;
+    }
+        .layer-7-foreground {
+        top: 84svh;
+    }
+    .hero-hint-cta-text p {
+        padding: 0 !important;
+        font-size: 12px;
+    }
+    .about-second-cont span {
+        padding: 4px 12px;
+    }
+    .about {
+        padding: 50px 5.5%;
+    }
+    .about-section-top-divider {
+        top: -12px;
+    }
+        .about-section-bottom-divider {
+        bottom: -12px;
+    }
+    .featured-works {
+        padding: 62px 0 32px 0;
+    }
+        .featured-works-title {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+    .featured-works-title span {
+        font-size: 24px;
+    }
+        .featured-work-item {
+        height: 77vh;
+        width: 80vw;
+    }
+    .contact {
+        height: 72vh;
+        transform: scale(1.2);
+    }
+    .contact-wrapper {
+        background-color: #0d161a;
+        overflow: hidden;
+        height: 77vh;
+    }
 
+}
