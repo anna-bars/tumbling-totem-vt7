@@ -232,6 +232,9 @@ top: auto;
     left: 35%;
     bottom: 33%;
 }
+.hero {
+    height: 104svh !important;
+}
 
 }
 @media (max-width: 600px) {
