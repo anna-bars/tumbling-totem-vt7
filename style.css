@@ -7,7 +7,7 @@
 }
 .hero {
 height: 108svh;
-    background-image: url(./img/hero/background.png);
+    background-image: url(./img/hero/background.webp);
     background-size: cover;
     position: relative;
     overflow: hidden;
