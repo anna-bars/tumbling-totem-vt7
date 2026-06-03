@@ -6,7 +6,6 @@ const layers = {
     jungleMid: document.querySelector(".layer-5-jungle-mid"),
     jungleFront: document.querySelector(".layer-6-jungle-front"),
     foreground: document.querySelector(".layer-7-foreground"),
-
     leavesLeft: document.querySelector(".leaves-left"),
     leavesRight: document.querySelector(".leaves-right"),
 };
@@ -14,115 +13,103 @@ const layers = {
 const isMobile = window.innerWidth <= 768;
 const scale = isMobile ? 1.3 : 1.1;
 
-// Desktop values
 const desktopDepth = {
-    sky: 0.08,
-    mountains: 0.15,
-    hills: 0.25,
-    temple: 0.45,
-    jungleMid: 0.70,
-    jungleFront: 1.00,
-    foreground: 1.45,
+    sky: 0.08, mountains: 0.15, hills: 0.25,
+    temple: 0.45, jungleMid: 0.70, jungleFront: 1.00, foreground: 1.45,
 };
-
-// Mobile values
 const mobileDepth = {
-    sky: 0.03,
-    mountains: 0.06,
-    hills: 0.10,
-    temple: 0.18,
-    jungleMid: 0.28,
-    jungleFront: 0.40,
-    foreground: 0.60,
+    sky: 0.03, mountains: 0.06, hills: 0.10,
+    temple: 0.18, jungleMid: 0.28, jungleFront: 0.40, foreground: 0.60,
 };
-
 const depth = isMobile ? mobileDepth : desktopDepth;
 
-const lerp = (start, end, amount) =>
-    start + (end - start) * amount;
+const lerp = (start, end, amount) => start + (end - start) * amount;
 
-// scroll state
-let targetScroll = 0;
-let currentScroll = 0;
+let targetScroll = 0, currentScroll = 0;
+let targetMouseX = 0, mouseX = 0;
 
-// 🎯 mouse state (NEW)
-let targetMouseX = 0;
-let mouseX = 0;
-
-// mouse tracking
 window.addEventListener("mousemove", (e) => {
-    targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2; // -1 → 1
+    targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
 });
-
-// scroll tracking
 window.addEventListener("scroll", () => {
     targetScroll = window.scrollY;
 });
+
+// ── LOGO interactions ──────────────────────────────────────────────
 const logo = document.querySelector(".logo");
 
 if (logo) {
-    let hover = false;
+    logo.style.transition = "transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), filter 0.4s ease";
 
-    logo.addEventListener("mouseenter", () => {
-        hover = true;
+    let isHovering = false;
+
+    logo.addEventListener("mouseenter", () => { isHovering = true; });
+
+    logo.addEventListener("mousemove", (e) => {
+        const rect = logo.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+        logo.style.transform = `translate(${x * 4}px, ${y * 2.5}px) scale(1.015)`;
     });
 
     logo.addEventListener("mouseleave", () => {
-        hover = false;
-
-        // reset smoothly
-        logo.style.transform = `translate(0px, 0px) scale(1)`;
+        isHovering = false;
+        logo.style.transform = "translate(0px, 0px) scale(1)";
     });
 
-    logo.addEventListener("mousemove", (e) => {
-        if (!hover) return;
+    // Proximity — works from far, no :hover gate
+    document.addEventListener("mousemove", (e) => {
+        if (isHovering) return; // magnetic handles it when on logo
 
         const rect = logo.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+        const radius = 400;
 
-        // normalize mouse inside logo (-1 to 1)
-        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+if (dist < radius) {
+    const pull = 1 - dist / radius;
+    const pullFast = Math.pow(pull, 0.5); // արագ աճ հեռվից
+    const glowPx = pullFast * 28;
+    const bright = 1 + pullFast * 0.25;
+    logo.style.transform = `scale(${1 + pullFast * 0.015})`;
+    logo.style.filter = `brightness(${bright}) drop-shadow(0px 0px ${glowPx}px rgba(255, 210, 100, 0.65))`;
+} else {
+    logo.style.transform = "scale(1)";
+    logo.style.filter = "brightness(1) drop-shadow(0px 0px 0px transparent)";
+}
+    });
 
-        // VERY small movement
-        const moveX = x * 6;
-        const moveY = y * 4;
-
-        const scale = 1.03; // subtle zoom only
-
-        logo.style.transform = `
-            translate(${moveX}px, ${moveY}px)
-            scale(${scale})
-        `;
+    // Click pulse
+    logo.addEventListener("click", () => {
+        logo.style.transition = "transform 0.1s ease, filter 0.1s ease";
+        logo.style.transform = "scale(0.97)";
+        logo.style.filter = "brightness(1.4) drop-shadow(0px 0px 26px rgba(255, 200, 80, 0.85))";
+        setTimeout(() => {
+            logo.style.transition = "transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), filter 0.6s ease";
+            logo.style.transform = "scale(1)";
+            logo.style.filter = "brightness(1) drop-shadow(0px 0px 0px transparent)";
+        }, 120);
     });
 }
+// ── Main animation loop ────────────────────────────────────────────
 function animate() {
     requestAnimationFrame(animate);
 
-    // smooth scroll + mouse
     currentScroll = lerp(currentScroll, targetScroll, 0.08);
     mouseX = lerp(mouseX, targetMouseX, 0.06);
 
     const progress = Math.min(currentScroll / window.innerHeight, 1);
-
     const move = isMobile ? progress * 180 : progress * 450;
 
-    // 🔥 VERY SMALL mouse strength (IMPORTANT)
-    const mouseStrength = isMobile ? 3 : 6;
+    // Reduced mouse strength
+    const mouseStrength = isMobile ? 1.5 : 3;
 
-    // helper
     const apply = (el, d) => {
         if (!el) return;
-
-        const x = mouseX * mouseStrength * d;
-        const y = -move * d;
-
-        el.style.transform = `
-            translate(${x}px, ${y}px)
-            scale(${scale})
-        `;
+        el.style.transform = `translate(${mouseX * mouseStrength * d}px, ${-move * d}px) scale(${scale})`;
     };
 
-    // BACK LAYERS
     apply(layers.sky, depth.sky);
     apply(layers.mountains, depth.mountains);
     apply(layers.hills, depth.hills);
@@ -131,25 +118,12 @@ function animate() {
     apply(layers.jungleFront, depth.jungleFront);
     apply(layers.foreground, depth.foreground);
 
-    // 🍃 LEAVES (slightly stronger but still subtle)
+    // Leaves — much more subtle now
     if (layers.leavesLeft) {
-        layers.leavesLeft.style.transform = `
-            translate(
-                ${mouseX * 10 - progress * 80}px,
-                ${-progress * 180}px
-            )
-            scale(${scale})
-        `;
+        layers.leavesLeft.style.transform = `translate(${mouseX * 4 - progress * 40}px, ${-progress * 90}px) scale(${scale})`;
     }
-
     if (layers.leavesRight) {
-        layers.leavesRight.style.transform = `
-            translate(
-                ${mouseX * 10 + progress * 80}px,
-                ${-progress * 180}px
-            )
-            scale(${scale})
-        `;
+        layers.leavesRight.style.transform = `translate(${mouseX * 4 + progress * 40}px, ${-progress * 90}px) scale(${scale})`;
     }
 }
 
