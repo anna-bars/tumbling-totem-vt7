@@ -449,5 +449,20 @@ height: 106vh;
         overflow: hidden;
         height: 77vh;
     }
-
+    
+}
+@media (max-width: 280){
+        h1 {
+        font-size: 22px;
+    }
+        .featured-works {
+        padding: 34px 0 32px 0;
+    }
+    .inscription-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    }
+        .inscription-email {
+        font-size: 10px;
+    }
 }
