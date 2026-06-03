@@ -50,7 +50,7 @@
     overflow: hidden;
     position: relative;
 
-    background-image: url(../img/featured-works/work-2.jpg);
+    background-image: url(../img/featured-works/work-2.webp);
     background-size: cover;
     background-position: center;
 
@@ -166,11 +166,11 @@
 }
 
 .item-2 {
-    background-image: url(../img/featured-works/work.jpg);
+    background-image: url(../img/featured-works/work.webp);
 }
 
 .item-3 {
-    background-image: url(../img/featured-works/work3.png);
+    background-image: url(../img/featured-works/work3.webp);
 }
 
 .drag-hint {
