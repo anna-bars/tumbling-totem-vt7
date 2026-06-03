@@ -237,8 +237,8 @@ height: 106vh;
     width: 82vw;
     }
     .layer-4-temple {
-        width: 54%;
-        top: 59svh !important;
+        width: 59%;
+        top: 60svh !important;
     }
         .leaves-left, .leaves-right {
         width: 49%;
@@ -307,11 +307,11 @@ height: 106vh;
     padding: 0 5.5%;
     }
         h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
     .about-second-cont p {
     color: #ffeded6a;
-    font-size: 14px;
+    font-size: 16px;
 }
 .about-second-cont p {
     color: #ffeded6a;
@@ -340,10 +340,14 @@ height: 106vh;
 }
 
 @media (max-width: 425px) {
-        .contact {
-        height: 100vh;
+           .contact {
+        height: 70vh;
+        transform: scale(1.2);
     }
-    
+        .contact-wrapper {
+        overflow: hidden;
+        height: 80vh;
+    }
     .leaves-left, .leaves-right {
         width: 54%;
     }
