@@ -52,8 +52,12 @@ height: 108vh;
 .layer-4-temple,
 .layer-5-jungle-mid,
 .layer-6-jungle-front,
-.layer-7-foreground {
+.layer-7-foreground,
+.leaves-left,
+.leaves-right {
     will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 .logo {
     width: 410px;
@@ -183,7 +187,7 @@ height: 108vh;
 
 .about {
     position: relative;
-    padding: 70px 2.5%;
+    padding: 145px 2.5%;
     background: url(./img/about/background.png);
     margin-top: -8px;
 }
