@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tumbling Totem Portfolio</title>
+    <!-- CRITICAL: Hero + Works-ի համար անհրաժեշտ CSS — բեռնվում է անմիջապես -->
     <link rel="stylesheet" href="./style.css">
-
     <link rel="stylesheet" href="./font/urbanist/stylesheet.css">
     <link rel="stylesheet" href="./font/adventures/stylesheet.css">
-
-    <link rel="stylesheet" href="./about-animations.css">
     <link rel="stylesheet" href="./css/works.css">
-    <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+
+    <!-- NON-CRITICAL: Hero-ից հետո բեռնվում են, render-ը չեն բլոկում -->
+    <link rel="stylesheet" href="./about-animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="./css/contact.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="./css/responsive.css" media="print" onload="this.media='all'">
+    <!-- Fallback հին browser-ների համար -->
+    <noscript>
+        <link rel="stylesheet" href="./about-animations.css">
+        <link rel="stylesheet" href="./css/contact.css">
+        <link rel="stylesheet" href="./css/responsive.css">
+    </noscript>
 </head>
 <body>
     <div class="hero-cont">
       <div class="heroo">
         <div class="bottom-mask"></div>
           <section class="hero">
-        <img loading="eager" decoding="sync" class="darkness" src="./img/hero/darkness.webp" alt="">
+        <img loading="eager" decoding="sync" class="darkness" src="./img/hero/000darkness.webp" alt="">
 
             <div class="hero-hint-cta-text">
                 <p>EST. 2026</p>
@@ -45,8 +52,8 @@
         <img loading="eager" decoding="sync" class="fog_olips_left" src="./img/hero/fog/fog_olips_left.webp" alt="">
         <img loading="eager" decoding="sync" class="fog_olips_right" src="./img/hero/fog/fog_olips_right.webp" alt="">
 
-        <img loading="eager" decoding="sync" class="fog-triangle-left" src="./img/hero/fog/fog-triangle-left.png" alt="">
-        <img loading="eager" decoding="sync" class="fog-triangle-right" src="./img/hero/fog/fog-triangle-right.png" alt="">
+        <img loading="eager" decoding="sync" class="fog-triangle-left" src="./img/hero/fog/fog_olips_left.webp" alt="">
+        <img loading="eager" decoding="sync" class="fog-triangle-right" src="./img/hero/fog/fog-triangle-right.webp" alt="">
         <img loading="eager" decoding="sync" class="fog-triangle-top" src="./img/hero/fog/fog-triangle-top.png" alt="">
     </section>
         <img loading="eager" decoding="sync" class="leaves-left" src="./img/hero/leaves-vines-left.webp" alt="">
@@ -54,10 +61,10 @@
       </div>
 
         <section class="about">
-            <img class="about-section-top-divider" style="width: 100%;" src="./img/about/about-section-top-divider.png" alt="">
+            <img loading="lazy" class="about-section-top-divider" style="width: 100%;" src="./img/about/about-section-top-divider.png" alt="">
             <div class="spec-divider-cont">
-                <img src="./img/about/spec-divider-top-left.png" alt="">
-                <img src="./img/about/spec-divider-top-right.png" alt="">
+                <img loading="lazy" src="./img/about/spec-divider-top-left.png" alt="">
+                <img loading="lazy" src="./img/about/spec-divider-top-right.png" alt="">
             </div>
             <div class="about-text">
                 <h1>
@@ -71,10 +78,10 @@
                 </div>
             </div>
             <div class="spec-divider-cont">
-                <img src="./img/about/spec-divider-bottom-left.png" alt="">
-                <img src="./img/about/spec-divider-bottom-right.png" alt="">
+                <img loading="lazy" src="./img/about/spec-divider-bottom-left.png" alt="">
+                <img loading="lazy" src="./img/about/spec-divider-bottom-right.png" alt="">
             </div>
-            <img class="about-section-bottom-divider" src="./img/about/about-section-bottom-divider.png" alt="">
+            <img loading="lazy" class="about-section-bottom-divider" src="./img/about/about-section-bottom-divider.png" alt="">
         </section>
 
 
@@ -356,26 +363,26 @@
 
         <div class="contact-wrapper">
             <section class="contact">
-            <img class="front-bottom-layer-01" src="./img/contact/01-front-bottom-layer.png" alt="">
+            <img loading="lazy" class="front-bottom-layer-01" src="./img/contact/01-front-bottom-layer.png" alt="">
 
-            <img class="front-layer-top-02" src="./img/contact/02-front-layer-top.png" alt="">
-            <img class="front-layer-top-leaves-02" src="./img/contact/02-front-layer-top-leaves.png" alt="">
+            <img loading="lazy" class="front-layer-top-02" src="./img/contact/02-front-layer-top.png" alt="">
+            <img loading="lazy" class="front-layer-top-leaves-02" src="./img/contact/02-front-layer-top-leaves.png" alt="">
         
-            <img class="top-arch-03" src="./img/contact/03-top-arch.png" alt="">
+            <img loading="lazy" class="top-arch-03" src="./img/contact/03-top-arch.png" alt="">
 
-            <img class="left-arch-04" src="./img/contact/04-left-arch.png" alt="">
-            <img class="right-arch-05" src="./img/contact/05-right-arch.png" alt="">
+            <img loading="lazy" class="left-arch-04" src="./img/contact/04-left-arch.png" alt="">
+            <img loading="lazy" class="right-arch-05" src="./img/contact/05-right-arch.png" alt="">
 
-            <img class="totem-06" src="./img/contact/06-totem.png" alt="">
+            <img loading="lazy" class="totem-06" src="./img/contact/06-totem.png" alt="">
 
-            <img class="layer-light-07-1" src="./img/contact/07-1-layer-light.png" alt="">
-            <img class="totem-light-07" src="./img/contact/07-totem-light.png" alt="">
+            <img loading="lazy" class="layer-light-07-1" src="./img/contact/07-1-layer-light.png" alt="">
+            <img loading="lazy" class="totem-light-07" src="./img/contact/07-totem-light.png" alt="">
 
-            <img class="totem-left-arch-08" src="./img/contact/08-totem-left-arch.png" alt="">
-            <img class="totem-right-arch-08" src="./img/contact/08-totem-right-arch.png" alt="">
+            <img loading="lazy" class="totem-left-arch-08" src="./img/contact/08-totem-left-arch.png" alt="">
+            <img loading="lazy" class="totem-right-arch-08" src="./img/contact/08-totem-right-arch.png" alt="">
 
-            <img class="back-arch-darker-09" src="./img/contact/09-back-arch-darker.png" alt="">
-            <img class="back-arch-lighter-10" src="./img/contact/10-back-arch-lighter.png" alt="">
+            <img loading="lazy" class="back-arch-darker-09" src="./img/contact/09-back-arch-darker.png" alt="">
+            <img loading="lazy" class="back-arch-lighter-10" src="./img/contact/10-back-arch-lighter.png" alt="">
 
             <div class="contact-inscription">
                 <span class="inscription-label">GET IN TOUCH</span>
